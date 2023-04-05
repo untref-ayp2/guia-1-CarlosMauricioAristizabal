@@ -3,13 +3,19 @@ package main
 import (
 	"busquedas"
 	"fmt"
-	"sort"
 	"time"
 	"utiles"
 )
 
 func main() {
-	arreglo := utiles.GenerarArreglo(10, 100000)
+	tamaño := []int{1000, 10000, 100000, 1000000, 10000000, 100000000}
+	for i := 0; i < len(tamaño); i++ {
+		fmt.Println("Pruebas con tamaño:", tamaño[i])
+		datos(tamaño[i])
+	}
+}
+func datos(valorref int) {
+	arreglo := utiles.GenerarArreglo(10, valorref)
 	buscado := -1
 
 	//fmt.Println(arreglo)
@@ -21,7 +27,8 @@ func main() {
 
 	inicio = time.Now()
 	// Ordenar el arreglo para la busqueda binaria
-	sort.Ints(arreglo)
+	//sort.Ints(arreglo)
+	busquedas.Burbujeo(arreglo)
 	fmt.Println("Ordenamiento: ", time.Since(inicio))
 	//fmt.Println(arreglo)
 
