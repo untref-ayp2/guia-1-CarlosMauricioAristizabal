@@ -1,4 +1,4 @@
-package busquedas
+package ordenamientos
 
 func Burbujeo(datos []int) {
 	lendatos := len(datos)
